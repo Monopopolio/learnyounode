@@ -6,9 +6,9 @@ http.get(process.argv[2], function(res) {
 	console.log(data.length);
 	console.log(data.toString());
 
-	res.on("error", function(error) {
+	/*res.on("error", function(error) {
 		console.log('Error: ' + error.message);
-	});	
+	});*/	
 	 
 }));
 }).on('error', function(e) {
