@@ -3,6 +3,10 @@ var path = require('path');
 module.exports = function(directorio, extension, callback) {
 	fs.readdir(directorio, function(error, files) {
 		var ficherosfiltrados = Array();
+		if (error) {
+			return callback(error);
+		}
+
 		files.forEach(function(file) {
 			if (path.extname(file) == ("." + extension)) {
 				//console.log(file);
@@ -12,5 +16,5 @@ module.exports = function(directorio, extension, callback) {
 		});
 		callback(null, ficherosfiltrados);
 	});
-	
+
 };
